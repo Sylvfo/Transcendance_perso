@@ -1,0 +1,16 @@
+javascripts
+Tech Stack Recommendation
+Option 1: JavaScript/TypeScript Stack (Recommended for your case)
+
+Frontend: React + TypeScript
+Backend: Node.js + Express (or NestJS for more structure)
+Database: PostgreSQL
+Real-time: Socket.io or WebSocket
+Why: Single language across stack, faster development, good for real-time features (chess moves), large ecosystem
+Option 2: Python Stack
+
+Frontend: React + TypeScript (still best choice)
+Backend: FastAPI or Django
+Database: PostgreSQL
+Why: If your team prefers Python backend, but you'd still use TS/JS for frontend
+I recommend Option 1 — consistency across the team is valuable for a 4-person project.

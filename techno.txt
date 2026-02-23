@@ -1,1 +1,411 @@
-javascripts
+ft_transcendence - CHESS GAME WITH AI OPPONENT
+===============================================
+
+TECH STACK (FINAL)
+==================
+Frontend:     React + TypeScript
+Backend:      Node.js + Express + TypeScript
+Database:     PostgreSQL
+Real-time:    Socket.io
+Authentication: JWT + bcrypt
+ORM:          Prisma
+AI Engine:    Chess.js + evaluation algorithms
+Containerization: Docker + Docker Compose
+
+
+TEAM ROLES & DISTRIBUTION (4 PEOPLE)
+=====================================
+
+Person 1: FRONTEND DEVELOPER #1
+  - Chess board UI (visual display, piece rendering)
+  - Game interface & user experience
+  - Real-time move visualization
+  - AI move display & feedback
+  - Modules: Web (frontend framework + real-time)
+
+Person 2: FRONTEND DEVELOPER #2
+  - User management UI (login, profile, avatar)
+  - Friends system & user interaction
+  - Chat system UI
+  - Game statistics & match history display
+  - Modules: Web (user interaction + ORM), User Management (standard + game stats)
+
+Person 3: BACKEND DEVELOPER #1
+  - Authentication & user management (signup, login, JWT)
+  - User profiles & avatars
+  - Friends system backend
+  - Database schema & migrations
+  - Game statistics tracking
+  - Modules: User Management (avatar, profile, friends, game stats)
+
+Person 4: BACKEND DEVELOPER #2 (PM/Tech Lead)
+  - Chess game logic & validation
+  - Real-time multiplayer (WebSocket sync)
+  - AI Opponent implementation & tuning
+  - Chat system backend
+  - Project coordination
+  - Modules: Gaming (web-based game + remote players), AI (AI Opponent)
+
+
+MODULES TO IMPLEMENT (TOTAL: 16 POINTS)
+========================================
+
+POINT BREAKDOWN:
+
+WEB MODULES (7 points):
+  1. Frontend + Backend frameworks (MAJOR - 2pts)
+     - Frontend: React + TypeScript
+     - Backend: Express + TypeScript
+     Assigned to: Person 1 + Person 4
+
+  2. Real-time (WebSockets) (MAJOR - 2pts)
+     - Real-time chess moves between players
+     - Live player updates & game state sync
+     - Connection handling & reconnection logic
+     Assigned to: Person 4
+
+  3. User interaction (MAJOR - 2pts)
+     - Basic chat system (send/receive messages)
+     - User profiles (view/edit information)
+     - Friends system (add/remove, see online status)
+     Assigned to: Person 2 (frontend) + Person 3 (backend)
+
+  4. ORM (MINOR - 1pt)
+     - Use Prisma for database queries
+     - Type-safe database operations
+     Assigned to: Person 3
+
+USER MANAGEMENT MODULES (3 points):
+  5. Standard user management (MAJOR - 2pts)
+     - User profile update
+     - Avatar upload (with default avatar)
+     - Add/remove friends & online status
+     - Profile pages
+     Assigned to: Person 2 + Person 3
+
+  6. Game statistics / match history (MINOR - 1pt)
+     - Track wins, losses, draws
+     - Match history (opponents, dates, results)
+     - Leaderboard & ranking display
+     Assigned to: Person 2 (display) + Person 3 (backend)
+
+GAMING MODULES (4 points):
+  7. Web-based game - Chess (MAJOR - 2pts)
+     - Complete chess implementation
+     - Move validation & game rules (castling, en passant, etc.)
+     - Win/loss conditions (checkmate, resignation)
+     - 2D visual board with pieces
+     Assigned to: Person 1 (UI) + Person 4 (logic)
+
+  8. Remote players (MAJOR - 2pts)
+     - Two players on separate computers play in real-time
+     - Network latency handling
+     - Disconnection & reconnection logic
+     - Move broadcasting to both clients
+     Assigned to: Person 4
+
+AI MODULES (2 points):
+  9. AI Opponent (MAJOR - 2pts)
+     - AI player vs human player
+     - AI must be challenging but not unbeatable
+     - Human-like behavior (not always perfect moves)
+     - Works with game customization
+     Assigned to: Person 1 (UI integration) + Person 4 (engine)
+
+TOTAL POINTS: 2+2+2+1 + 2+1 + 2+2 + 2 = 16 points ✓
+(14 minimum required + 2 bonus)
+
+
+MANDATORY REQUIREMENTS (PROJECT FOUNDATION)
+============================================
+
+✓ Web application (frontend + backend + database)
+✓ Multi-user support (concurrent players)
+✓ User authentication (email/password with bcrypt)
+✓ User profiles with avatars
+✓ Secure database with clear schema
+✓ Privacy Policy & Terms of Service pages
+✓ Git with commits from all members
+✓ Docker deployment (single command: docker-compose up)
+✓ HTTPS backend
+✓ No console errors/warnings
+✓ Responsive, accessible frontend
+✓ Form validation (frontend + backend)
+
+
+LEARNING REQUIREMENTS BY PERSON
+=================================
+
+FRONTEND TEAM (Person 1 + Person 2):
+  Essential (ALL):
+    □ Chess rules & move validation
+    □ WebSocket basics (Socket.io client)
+    □ Real-time state management
+    □ TypeScript fundamentals
+    □ React hooks (useState, useEffect, useContext, useReducer)
+    □ CSS/Tailwind for responsive design
+    □ Form handling & validation
+
+  Person 1 (Chess UI Specialist):
+    □ Canvas or SVG for board rendering
+    □ SVG/CSS for piece animation
+    □ Touch/keyboard input handling
+    □ Game state visualization
+    □ AI move visualization & feedback
+    □ Drag & drop for pieces
+
+  Person 2 (Social Features UI):
+    □ User profile layouts
+    □ Chat UI component (message list, input, real-time)
+    □ Statistics & leaderboard display
+    □ Match history visualization
+    □ Real-time UI updates from WebSocket
+
+BACKEND TEAM (Person 3 + Person 4):
+  Essential (ALL):
+    □ Express.js fundamentals
+    □ TypeScript in Node.js
+    □ PostgreSQL basics
+    □ REST API design
+    □ JWT authentication & authorization
+    □ Password hashing (bcrypt)
+    □ WebSocket with Socket.io (server)
+    □ Database migrations & relationships
+    □ CORS & security headers
+    □ Error handling & logging
+
+  Person 3 (User Management):
+    □ User registration & login flow
+    □ JWT token generation & validation
+    □ Password hashing & verification
+    □ Avatar file upload & storage
+    □ Prisma ORM basics & type safety
+    □ User/Friend/GameStats database tables
+    □ Statistics aggregation queries
+
+  Person 4 (Game & AI):
+    □ Chess move validation & legal move generation
+    □ Game state management & persistence
+    □ WebSocket event broadcasting
+    □ AI algorithm fundamentals
+    □ Minimax or Alpha-Beta pruning for AI
+    □ Move evaluation & heuristics
+    □ Real-time sync logic
+    □ Reconnection handling
+
+
+WORK BREAKDOWN & TIMELINE
+==========================
+
+PHASE 1: Setup & Infrastructure (Week 1-2)
+  - Setup Docker/Docker Compose
+  - Create React project + backend Express setup
+  - Setup PostgreSQL
+  - Create database schema (users, friends, games, game_stats, messages)
+  - Setup Prisma ORM & migrations
+  - Basic authentication endpoints (signup, login, JWT)
+  - User profile endpoints
+  Assigned: All 4 (especially Person 3 + Person 4)
+
+PHASE 2: Core Game & User Management (Week 3-5)
+  - Chess board UI & piece rendering (Person 1)
+  - User profiles & login UI (Person 2)
+  - Authentication backend & JWT (Person 3)
+  - Chess logic & move validation (Person 4)
+  - Avatar upload system (Person 3 + Person 2)
+  - Friends system (Person 2 + Person 3)
+  - Basic game creation endpoint (Person 4)
+
+PHASE 3: Real-time & Multiplayer (Week 6-7)
+  - WebSocket setup (Person 4)
+  - Live move sync between two players (Person 1 + Person 4)
+  - Connection & reconnection handling (Person 4)
+  - Chat system backend & frontend (Person 2 + Person 4)
+  - Real-time friends online status (Person 2 + Person 3)
+
+PHASE 4: AI Opponent Implementation (Week 8)
+  - AI algorithm implementation (Person 4)
+  - AI move generation & evaluation (Person 4)
+  - AI vs Player gameplay (Person 1 + Person 4)
+  - AI tuning & difficulty levels (Person 4)
+  - AI UI integration (Person 1)
+
+PHASE 5: Game Statistics & Tracking (Week 9)
+  - Game statistics tracking (Person 3 + Person 4)
+  - Match history storage (Person 3)
+  - Leaderboard logic (Person 3 + Person 4)
+  - Statistics display UI (Person 2)
+  - Player stats endpoint (Person 3)
+
+PHASE 6: Polish & Deployment (Week 10-11)
+  - Testing & bug fixes (All)
+  - Privacy Policy & Terms of Service pages (Person 2)
+  - README.md completion (All)
+  - Docker build & deployment verification (Person 4)
+  - Console error cleanup (All)
+  - Browser compatibility testing (All)
+  - Performance optimization (Person 1 + Person 4)
+
+
+DEPLOYMENT SETUP
+================
+
+Docker Compose structure:
+  - Frontend service (React, port 3000)
+  - Backend service (Express, port 5000)
+  - PostgreSQL service (port 5432)
+
+Single command to run:
+  docker-compose up
+
+Environment variables:
+  - DATABASE_URL
+  - JWT_SECRET
+  - NODE_ENV
+  - REACT_APP_API_URL
+
+
+GIT WORKFLOW
+============
+
+Branch strategy:
+  - main: production-ready code
+  - develop: integration branch
+  - feature/[feature-name]: individual features
+  - bugfix/[bug-name]: bug fixes
+  - ai/[ai-feature]: AI development
+
+Each person:
+  - Create feature branch from develop
+  - Regular commits (at least daily)
+  - Clear, descriptive commit messages
+  - Pull request review before merge
+  - Person 4 (PM) approves merges
+
+Commit message format:
+  [Initials] Category: description
+  Examples:
+    [P1] Frontend: add chess board component
+    [P4] Backend: implement minimax AI algorithm
+    [P3] Database: add game_stats table migration
+
+
+DATABASE SCHEMA (OVERVIEW)
+===========================
+
+Users:
+  - id (PK, UUID)
+  - email (unique, string)
+  - password_hash (string)
+  - username (unique, string)
+  - avatar_url (string, nullable)
+  - online_status (boolean, default: false)
+  - created_at (timestamp)
+  - updated_at (timestamp)
+
+Friends:
+  - id (PK)
+  - user_id (FK → Users)
+  - friend_id (FK → Users)
+  - created_at (timestamp)
+  - Constraint: user_id ≠ friend_id
+
+Games:
+  - id (PK, UUID)
+  - white_player_id (FK → Users)
+  - black_player_id (FK → Users)
+  - status (enum: pending, ongoing, completed)
+  - winner_id (FK → Users, nullable)
+  - result (enum: white_win, black_win, draw, null)
+  - moves (JSON array or separate table)
+  - pgn (string, nullable) - for chess notation
+  - created_at (timestamp)
+  - updated_at (timestamp)
+
+GameStatistics:
+  - id (PK)
+  - user_id (FK → Users, unique)
+  - total_games (int, default: 0)
+  - wins (int, default: 0)
+  - losses (int, default: 0)
+  - draws (int, default: 0)
+  - rating (float, default: 1200)
+  - updated_at (timestamp)
+
+Messages:
+  - id (PK)
+  - sender_id (FK → Users)
+  - receiver_id (FK → Users)
+  - content (text)
+  - read (boolean, default: false)
+  - created_at (timestamp)
+
+(More details to be added as project progresses)
+
+
+KEY TECHNICAL CHALLENGES
+========================
+
+1. Real-time Move Synchronization
+   - Ensure both players see moves instantly
+   - Handle network latency & packet loss
+   - Prevent race conditions
+
+2. Chess Logic Complexity
+   - Implement all chess rules correctly
+   - Legal move generation & validation
+   - Check/checkmate detection
+   - Castling, en passant, promotion
+
+3. AI Implementation
+   - Balance difficulty vs performance
+   - Implement efficient evaluation function
+   - Use minimax with alpha-beta pruning
+   - Avoid blocking the UI during AI thinking
+
+4. Concurrent Users
+   - Multiple simultaneous games
+   - WebSocket connection management
+   - Database transaction handling
+   - Reconnection to ongoing games
+
+5. Authentication & Security
+   - Secure password storage (bcrypt + salt)
+   - JWT token expiration & refresh
+   - Input validation & sanitization
+   - HTTPS for all connections
+
+
+RESOURCES TO LEARN
+==================
+
+Frontend:
+  - React Documentation & Hooks
+  - Socket.io Client Documentation
+  - TypeScript Handbook
+  - Tailwind CSS Documentation
+  - Canvas/SVG tutorials for game rendering
+
+Backend:
+  - Express.js Guide
+  - Prisma ORM Documentation
+  - PostgreSQL Documentation
+  - JWT Authentication Best Practices
+  - WebSocket fundamentals
+
+Chess:
+  - Chess.js library (move validation)
+  - Chess rules & terminology
+  - FEN notation (Forsyth-Edwards Notation)
+  - PGN format (Portable Game Notation)
+
+AI:
+  - Minimax algorithm
+  - Alpha-Beta pruning
+  - Chess evaluation functions
+  - Move ordering optimization
+
+Docker:
+  - Docker & Docker Compose documentation
+  - Container best practices
+  - Multi-stage builds

@@ -32,8 +32,8 @@ function App() {
   )
 }
 
-export default App
-*/
+export default App*/
+
 const App = () => {
   return (
     <div>
@@ -43,3 +43,14 @@ const App = () => {
 }
 
 export default App
+
+/*const App = () => {
+  console.log('Hello from component')
+  return (
+    <div>
+      <p>Hello worldt</p>
+    </div>
+  )
+}
+
+export default App*/

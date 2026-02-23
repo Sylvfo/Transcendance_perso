@@ -1,0 +1,295 @@
+ft_transcendence - CHESS GAME WITH TOURNAMENTS
+================================================
+
+TECH STACK (FINAL)
+==================
+Frontend:     React + TypeScript
+Backend:      Node.js + Express + TypeScript
+Database:     PostgreSQL
+Real-time:    Socket.io
+Authentication: JWT + bcrypt
+ORM:          Prisma
+
+Containerization: Docker + Docker Compose
+
+
+TEAM ROLES & DISTRIBUTION (4 PEOPLE)
+=====================================
+
+Person 1: FRONTEND DEVELOPER #1
+  - Chess board UI (visual display, piece rendering)
+  - Game interface & user experience
+  - Real-time move visualization
+  - Modules: Web (frontend framework)
+
+Person 2: FRONTEND DEVELOPER #2
+  - User management UI (login, profile, avatar)
+  - Friends system & user interaction
+  - Tournament bracket display
+  - Chat system UI
+  - Modules: Web (frontend), User Management (standard)
+
+Person 3: BACKEND DEVELOPER #1
+  - Authentication & user management (signup, login, JWT)
+  - User profiles & avatars
+  - Friends system backend
+  - Database schema & migrations
+  - Modules: User Management (avatar, profile, friends)
+
+Person 4: BACKEND DEVELOPER #2 (PM/Tech Lead)
+  - Chess game logic & validation
+  - Real-time multiplayer (WebSocket sync)
+  - Tournament system (bracket, matchmaking)
+  - Chat system backend
+  - Project coordination
+  - Modules: Gaming (web-based game + remote players), Web (websockets + backend framework)
+
+Optional shared: AI Opponent (Person 1 + Person 4)
+
+
+TARGET MODULES (14 POINTS MINIMUM)
+===================================
+
+MANDATORY FEATURES:
+  ✓ Frontend framework (React) - COVERED by Web module
+  ✓ Backend framework (Express) - COVERED by Web module
+  ✓ User authentication (email/password)
+  ✓ User profiles with avatars
+  ✓ Multi-user support (concurrent players)
+  ✓ Database with clear schema
+  ✓ Privacy Policy & Terms of Service pages
+  ✓ Git with commits from all members
+  ✓ Docker deployment (single command)
+  ✓ HTTPS backend
+  ✓ No console errors/warnings
+
+MODULES TO IMPLEMENT (Total: 14 pts):
+
+1. Web - Use frameworks (MAJOR - 2pts)
+   - Frontend: React + TypeScript ✓
+   - Backend: Express + TypeScript ✓
+   Assigned to: Person 1 + Person 4
+
+2. Web - WebSocket/Real-time (MAJOR - 2pts)
+   - Real-time chess moves
+   - Live player updates
+   - Connection handling & reconnection
+   Assigned to: Person 4
+
+3. Web - User interaction (MAJOR - 2pts)
+   - Basic chat system (send/receive)
+   - User profiles
+   - Friends system (add/remove, online status)
+   Assigned to: Person 2 (frontend) + Person 3 (backend)
+
+4. Gaming - Web-based game (MAJOR - 2pts)
+   - Complete chess implementation
+   - Move validation & game rules
+   - Win/loss conditions
+   Assigned to: Person 1 (UI) + Person 4 (logic)
+
+5. Gaming - Remote players (MAJOR - 2pts)
+   - Two players on separate computers
+   - Network latency handling
+   - Disconnection & reconnection logic
+   Assigned to: Person 4
+
+6. Gaming - Tournament system (MINOR - 1pt)
+   - Bracket system
+   - Matchmaking
+   - Tournament registration & management
+   Assigned to: Person 2 (display) + Person 4 (backend)
+
+7. User Management - Standard (MAJOR - 2pts)
+   - User update profile
+   - Avatar upload (with default)
+   - Add friends & online status
+   - Profile pages
+   Assigned to: Person 2 + Person 3
+
+8. Web - ORM (MINOR - 1pt)
+   - Use Prisma for database
+   Assigned to: Person 3
+
+TOTAL: 14 points ✓
+
+
+LEARNING REQUIREMENTS BY PERSON
+=================================
+
+FRONTEND TEAM (Person 1 + Person 2):
+  Essential (ALL):
+    □ Chess rules & move validation
+    □ WebSocket basics (Socket.io client)
+    □ Real-time state management
+    □ TypeScript fundamentals
+    □ React hooks (useState, useEffect, useContext)
+    □ CSS/Tailwind for responsive design
+
+  Person 1 (Chess UI Specialist):
+    □ Canvas or SVG for board rendering
+    □ SVG/CSS for piece animation
+    □ Touch/keyboard input handling
+    □ Game state visualization
+
+  Person 2 (Social Features UI):
+    □ Form handling & validation (React)
+    □ User profile layouts
+    □ Chat UI component (message list, input)
+    □ Tournament bracket visualization
+    □ Real-time UI updates from WebSocket
+
+BACKEND TEAM (Person 3 + Person 4):
+  Essential (ALL):
+    □ Express.js fundamentals
+    □ TypeScript in Node.js
+    □ PostgreSQL basics
+    □ REST API design
+    □ JWT authentication
+    □ Password hashing (bcrypt)
+    □ WebSocket with Socket.io (server)
+    □ Database migrations & relationships
+    □ CORS & security headers
+
+  Person 3 (User Management):
+    □ User registration flow
+    □ JWT token generation & validation
+    □ Password hashing & verification
+    □ Avatar file upload & storage
+    □ Prisma ORM basics
+    □ User/Friend database tables
+
+  Person 4 (Game & Tournament):
+    □ Chess move validation logic
+    □ Game state management
+    □ WebSocket event broadcasting
+    □ Tournament bracket algorithms
+    □ Real-time sync logic
+    □ Reconnection handling
+    □ Matchmaking logic
+
+
+WORK BREAKDOWN & TIMELINE
+==========================
+
+PHASE 1: Setup & Infrastructure (Week 1-2)
+  - Setup Docker/Docker Compose
+  - Create React project + backend Express setup
+  - Setup PostgreSQL
+  - Create database schema (users, games, tournaments, messages)
+  - Setup Prisma ORM
+  - Basic authentication endpoints
+  Assigned: All 4 (especially Person 3 + Person 4)
+
+PHASE 2: Core Game & User Management (Week 3-5)
+  - Chess board UI (Person 1)
+  - User profiles & login UI (Person 2)
+  - Authentication backend (Person 3)
+  - Chess logic & validation (Person 4)
+  - Avatar upload system (Person 3 + Person 2)
+
+PHASE 3: Real-time & Multiplayer (Week 6-7)
+  - WebSocket setup (Person 4)
+  - Live move sync (Person 1 + Person 4)
+  - Friends system (Person 2 + Person 3)
+  - Chat system (Person 2 + Person 4)
+
+PHASE 4: Tournament System (Week 8)
+  - Tournament UI (Person 2)
+  - Matchmaking & bracket logic (Person 4)
+  - Tournament state management
+
+PHASE 5: Polish & Deployment (Week 9)
+  - Testing & bug fixes
+  - Privacy Policy & Terms of Service pages
+  - README.md completion
+  - Docker build & deployment
+  - Console error cleanup
+  - Browser compatibility (Chrome)
+
+BONUS (If time permits):
+  - AI Opponent (Person 1 + Person 4)
+  - Advanced chat features
+  - Game statistics
+
+
+DEPLOYMENT SETUP
+================
+
+Docker Compose structure:
+  - Frontend service (React, port 3000)
+  - Backend service (Express, port 5000)
+  - PostgreSQL service (port 5432)
+
+Single command to run:
+  docker-compose up
+
+Environment variables:
+  - DATABASE_URL
+  - JWT_SECRET
+  - NODE_ENV
+  - REACT_APP_API_URL
+
+
+GIT WORKFLOW
+============
+
+Branch strategy:
+  - main: production-ready code
+  - develop: integration branch
+  - feature/[feature-name]: individual features
+
+Each person:
+  - Create feature branch from develop
+  - Regular commits (clear messages)
+  - Pull request review before merge
+  - Person 4 (PM) approves merges
+
+Commit message format:
+  [Person initials] Feature: description
+  Example: [SL] Frontend: add chess board component
+
+
+DATABASE SCHEMA (OVERVIEW)
+===========================
+
+Users:
+  - id (PK)
+  - email (unique)
+  - password_hash
+  - username
+  - avatar_url
+  - online_status
+  - created_at
+
+Friends:
+  - id
+  - user_id
+  - friend_id (user_id)
+  - created_at
+
+Games:
+  - id
+  - white_player_id (FK)
+  - black_player_id (FK)
+  - status (ongoing, completed)
+  - winner_id (FK, nullable)
+  - moves (JSON array or separate table)
+  - created_at
+  - updated_at
+
+Tournaments:
+  - id
+  - name
+  - status (registration, ongoing, completed)
+  - bracket (JSON structure)
+  - created_at
+
+Messages:
+  - id
+  - sender_id (FK)
+  - receiver_id (FK)
+  - content
+  - created_at
+
+(More details to be added as project progresses)
